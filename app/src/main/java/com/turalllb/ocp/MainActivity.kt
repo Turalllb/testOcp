@@ -5,10 +5,10 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
-import com.turalllb.ocp.entity.Component
-import com.turalllb.ocp.entity.Event
-import com.turalllb.ocp.entity.Move
-import com.turalllb.ocp.entity.Notice
+import com.turalllb.ocp.viewModels.Component
+import com.turalllb.ocp.viewModels.Event
+import com.turalllb.ocp.viewModels.Move
+import com.turalllb.ocp.viewModels.Notice
 import java.util.*
 import kotlin.random.Random
 

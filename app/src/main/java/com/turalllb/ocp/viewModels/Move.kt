@@ -1,4 +1,4 @@
-package com.turalllb.ocp.entity
+package com.turalllb.ocp.viewModels
 
 import android.content.Context
 import android.content.Intent
