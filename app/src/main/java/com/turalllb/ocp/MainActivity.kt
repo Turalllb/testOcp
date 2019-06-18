@@ -23,11 +23,10 @@ class MainActivity : AppCompatActivity() {
 
 
         rv.layoutManager = LinearLayoutManager(this)
-        adapter = ComponentAdapter(LayoutInflater.from(this), getData(), ItemVisitor(applicationContext))
+        adapter = ComponentAdapter(LayoutInflater.from(this), getData())
         rv.adapter = adapter
 
     }
-
 
     private fun getData(): List<Component> {
         val list = mutableListOf<Component>()
@@ -52,4 +51,5 @@ class MainActivity : AppCompatActivity() {
         }
         return list
     }
+
 }

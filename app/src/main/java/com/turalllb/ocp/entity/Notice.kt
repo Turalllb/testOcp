@@ -1,5 +1,8 @@
 package com.turalllb.ocp.entity
 
+import android.content.Context
+import android.content.Intent
+import com.turalllb.ocp.itemDetailsView.NoticeScreen
 import java.util.*
 
 data class Notice(
@@ -9,7 +12,11 @@ data class Notice(
     val gate: String? = null
 
 ) : Component {
-    override fun accept(v: Visitor) {
-        v.visit(this)
+    override fun showDetails(context: Context) {
+        val intent = Intent(context, NoticeScreen::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        intent.putExtra("FLIGHT_DATE", flightDate)
+        intent.putExtra("gate", gate)
+        context.startActivity(intent)
     }
 }

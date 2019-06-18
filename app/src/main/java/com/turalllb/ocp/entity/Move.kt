@@ -1,6 +1,9 @@
 package com.turalllb.ocp.entity
 
+import android.content.Context
+import android.content.Intent
 import com.turalllb.ocp.TimeInterval
+import com.turalllb.ocp.itemDetailsView.MoveScreen
 import java.io.Serializable
 
 class Move(
@@ -11,8 +14,10 @@ class Move(
 ) : Component, Serializable {
     var estimateTime: TimeInterval? = null
 
-
-    override fun accept(v: Visitor) {
-        v.visit(this)
+    override fun showDetails(context: Context) {
+        val intent = Intent(context, MoveScreen::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        intent.putExtra(MoveScreen.MOVE, this)
+        context.startActivity(intent)
     }
 }

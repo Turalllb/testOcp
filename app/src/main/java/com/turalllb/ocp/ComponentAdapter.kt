@@ -9,8 +9,7 @@ import com.turalllb.ocp.entity.Component
 
 class ComponentAdapter(
     private val inflater: LayoutInflater,
-    private val list: List<Component>,
-    private val visitor: ItemVisitor
+    private val list: List<Component>
 ) : RecyclerView.Adapter<ComponentAdapter.ViewHolder>() {
 
 
@@ -28,7 +27,7 @@ class ComponentAdapter(
         holder.textDetails.text = list[position].details
         holder.itemClickListener = object : ItemClickListener {
             override fun onClick(position: Int) {
-                list[position].accept(visitor)
+                list[position].showDetails(inflater.context)
             }
         }
     }
